@@ -1,16 +1,21 @@
-'''Win Percentage
+'''
+Para el ejemplo cuatro vamos a crear una función que calcule
+el porcentaje de victorias de un equipo de futbol.
 
-Next, we will create a function
-which calculates the percentage of games won.
-In order to do this, we will need to know how many total games
-there were and divide the number of wins by the total number of games.
-For this function, there will be two input parameters,
-the number of wins and the number of losses.
-We also need to make sure that we return
-the result as a percentage (in the range of 0 to 100). In order to create this method we need the following steps:
+Para hacer ese cálculo vamos a necesitar dos argumentos,
+la cantidad de victorias y la cantidad de derrotas.
 
-Define the function header with two parameters, wins and losses
-Calculate the total number of games using the number of wins and losses
-Get the ratio of winning using the number of wins out of the total number of games.
-Convert the ratio to a percentage
-Return the percentage'''
+Para alcanzar el objetivo debemos seguir los pasos:
+
+1. Definir una función que tome dos argumentos, Victorias y Derrotas
+2. Calcular el número total de partidos jugados
+3. Calcular el ratio de Victorias.
+4. Convertir el ratio en porcentaje
+5. Regresar el porcentaje.'''
+
+def porcentaje_victorias(victorias, derrotas):
+    total = victorias + derrotas
+    ratio = victorias / total
+    return round(ratio * 100, 2)
+
+print(porcentaje_victorias(20, 5))

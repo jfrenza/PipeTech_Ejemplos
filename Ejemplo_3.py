@@ -1,16 +1,26 @@
-'''Divisible By Ten
+'''
+En el tercer ejemplo vamos a crear una función que
+cuenta cuántos de los números que hay dentro de una lista
+son divisibles por 10.
 
-Let’s start our code challenges with
-a function that counts how many numbers
-are divisible by ten from a list of numbers.
-This function will accept a list of numbers as
-an input parameter and use a loop to check each of the numbers
-in the list. Every time a number is divisible by 10,
-a counter will be incremented and the final
-count will be returned. These are the steps we need to complete this:
+La función tomará como argumento una lista de números y
+debe regresar la cuenta que representa la cantidad de números
+en la lista que son divisibles por 10.
 
-Define the function to accept one input parameter called nums
-Initialize a counter to 0
-Loop through every number in nums
-Within the loop, if any of the numbers are divisible by 10, increment our counter
-Return the final counter value'''
+Para realizar este ejemplo debemos seguir estos pasos:
+
+1. Definir una función que acepte un argumento.
+2. Inicializar un contador en 0
+3. Iterar a través de los elementos de la lista.
+4. Dentro del ciclo validar si ese número es divisible por 10,
+    de ser así, incrementar el contador
+5. Al finalizar todas las iteraciones, regresar la cuenta.'''
+
+def divisible_diez(numeros):
+    cuenta = 0
+    for numero in numeros:
+        if numero % 10 == 0:
+            cuenta += 1
+    return cuenta
+
+print(divisible_diez([10, 15, 20, 30, 45, 60]))

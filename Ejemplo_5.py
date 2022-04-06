@@ -1,17 +1,32 @@
-'''All Operations
+'''
+Para el último ejemplo vamos a crear una función que acepte un
+diccionario como argumento.
 
-For the final code challenge,
-we are going to perform multiple mathematical
-operations on multiple inputs to the function.
-We will begin with adding the first two inputs,
-then we will subtract the third and fourth inputs.
-After that, we will multiply the first result and
-the second result. In the end, we will return the
-remainder of the previous result divided by the first input.
-We will also print each of the steps. The steps needed to complete this are:
+Este diccionario tendrá como llaves diferentes apellidos y en valores
+una lista de nombres de personajes que tengan ese apellido.
 
-Define the function to accept four inputs: a, b, c, and d
-Print and store the result of a + b
-Print and store the result of c - d
-Print and store the first result times the second result
-Return the previous result modulo a'''
+La función debe calcular el número de personas que tienen la misma
+primera letra en el apellido
+
+Para lograr este objetivo debemos:
+
+1. Definir una función que tome como argumento el diccionario
+2. Crear un nuevo diccionario vacío.
+3. Iterar a través de cada una de las llaves.
+4. Dentro del ciclo validar si la primera letra del apellido no está en el diccionario,
+    de ser así, añadirla con 0 en su valor; de lo contrario incrementar el valor de la cuenta.
+5. Al final del ciclo regresar el nuevo diccionario'''
+
+
+nombres = {"Kamado": ["Tanjiro", "Nezuko", "Tanjuro"], "Rengoku" : ["Kyojuro", "Senjuro"], "Tomioka": ["Giyu"]}
+
+def cuenta_primer_apellido(nombres):
+    letras = {}
+    for key in nombres:
+        primera_letra = key[0]
+        if primera_letra not in letras:
+            letras[primera_letra] = 0
+        letras[primera_letra] += len(nombres[key])
+    return letras
+
+print(cuenta_primer_apellido(nombres))
